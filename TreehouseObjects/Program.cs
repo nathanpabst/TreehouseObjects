@@ -10,6 +10,7 @@ namespace TreehouseObjects
             Map map = new Map(8, 5);
 
             int area = map.Width + map.Height;
+
         }
     }
 }
