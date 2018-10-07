@@ -6,7 +6,7 @@ namespace TreehouseObjects
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Tower tower = new Tower();
         }
     }
 }
