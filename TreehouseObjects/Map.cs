@@ -6,5 +6,14 @@ namespace TreehouseObjects
 {
     class Map
     {
+        public readonly int Width;
+        public readonly int Height;
+
+        //constructor method to initialize the fields with values
+        public Map(int width, int height)
+        {
+            Width = width;
+            Height = height;
+        }
     }
 }
