@@ -23,5 +23,7 @@ namespace TreehouseObjects
             return point.X >= 0 && point.X < Width && 
                    point.Y >= 0 && point.Y   < Height;
         }
+
+        
     }
 }
