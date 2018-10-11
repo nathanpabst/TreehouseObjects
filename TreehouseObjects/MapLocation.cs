@@ -13,7 +13,7 @@ namespace TreehouseObjects
             if (!map.OnMap(this))
             {
                 //if the given map location is not on the map, throw an exception
-                throw new Exception($"{x}, {y} is outside the boundaries of the map");
+                throw new OutOfBoundsException($"{x}, {y} is outside the boundaries of the map");
             }
         }
     }
