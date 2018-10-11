@@ -8,17 +8,16 @@ namespace TreehouseObjects
         {
             //Tower tower = new Tower();
             Map map = new Map(8, 5);
+            //handle exception here with try/catch since this is the first file run in the program
+            try
+            {
+                MapLocation mapLocation = new MapLocation(20, 20, map);
 
-            Point x = new MapLocation(4, 2);
-
-            Point p = x;
-
-            map.OnMap(new MapLocation(0, 0));
-            Console.WriteLine(x.DistanceTo(5, 5));
-            Console.WriteLine(x is MapLocation);
-            Console.WriteLine(x is Point);
-            Point point = new Point(0, 0);
-            Console.WriteLine(point is MapLocation);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
             Console.Read();
         }
