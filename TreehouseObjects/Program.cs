@@ -11,16 +11,25 @@ namespace TreehouseObjects
             //handle exception here with try/catch since this is the first file run in the program
             try
             {
-                MapLocation[] path = {
-                    new MapLocation(0,2, map),
-                    new MapLocation(1,2, map),
-                    new MapLocation(2,2, map),
-                    new MapLocation(3,2, map),
-                    new MapLocation(4,2, map),
-                    new MapLocation(5,2, map),
-                    new MapLocation(6,2, map),
-                    new MapLocation(7,2, map),
-                };
+                Path path = new Path(
+                    //passing the array into the constructor
+                    new[] {
+                        new MapLocation(0,2, map),
+                        new MapLocation(1,2, map),
+                        new MapLocation(2,2, map),
+                        new MapLocation(3,2, map),
+                        new MapLocation(4,2, map),
+                        new MapLocation(5,2, map),
+                        new MapLocation(6,2, map),
+                        new MapLocation(7,2, map),
+                        }
+                );
+                //if selecting a value outside of the array length (8), the compiler will return null
+                MapLocation location = path.GetLocationAt(7);
+                if (location != null)
+                {
+                Console.WriteLine($"{location.X}, {location.Y}");
+                }
 
             }
             catch (OutOfBoundsException ex)
@@ -31,9 +40,10 @@ namespace TreehouseObjects
             {
                 Console.WriteLine("unhandled TreehouseDefense exception.");
             }
-            catch (Exception)
+            //by adding variable ex to the Exception message, we get more info about the type of exception that is occurring
+            catch (Exception ex)
             {
-                Console.WriteLine("unhandled exception.");
+                Console.WriteLine($"unhandled exception. {ex}");
             }
 
             Console.Read();
