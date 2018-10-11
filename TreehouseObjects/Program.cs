@@ -4,69 +4,78 @@ namespace TreehouseObjects
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             //Tower tower = new Tower();
-            //Map map = new Map(8, 5);
+            Map map = new Map(8, 5);
+            //handle exception here with try/catch since this is the first file run in the program
+            try
+            {
+                MapLocation mapLocation = new MapLocation(20, 20, map);
 
-            //Point point = new Point(4, 2);
-            //Console.WriteLine(point.DistanceTo(5, 5)); 
-
-            //------------ADDITIONAL PRACTICE WITH METHODS--------------
-            var book1 = new Book("The Fountainhead", "Ayn Rand");
-            Console.WriteLine(book1.GetDisplayText());
-
-            book1.Loan("Natz");
-            Console.WriteLine(book1.GetDisplayText());
-
-            book1.Return();
-            Console.WriteLine(book1.GetDisplayText());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
             Console.Read();
         }
+            //        //------------ADDITIONAL PRACTICE WITH METHODS--------------
+            //        var book1 = new Book("The Fountainhead", "Ayn Rand");
+            //        Console.WriteLine(book1.GetDisplayText());
 
-    }
-    class Book
-    {
-        public readonly string Title;
-        public readonly string Author;
-        public string Loanee = null;
-        public bool OnLoan = false;
+            //        book1.Loan("Natz");
+            //        Console.WriteLine(book1.GetDisplayText());
 
-        public Book(string title, string author)
-        {
-            Title = title;
-            Author = author;
+            //        book1.Return();
+            //        Console.WriteLine(book1.GetDisplayText());
+
+            //        Console.Read();
+            //    }
+
+            //}
+            //class Book
+            //{
+            //    public readonly string Title;
+            //    public readonly string Author;
+            //    public string Loanee = null;
+            //    public bool OnLoan = false;
+
+            //    public Book(string title, string author)
+            //    {
+            //        Title = title;
+            //        Author = author;
+            //    }
+
+            //    public void Loan(string loanee)
+            //    {
+            //        Loanee = loanee;
+            //        OnLoan = true;
+            //    }
+
+            //    public void Return()
+            //    {
+            //        Loanee = null;
+            //        OnLoan = false;
+            //    }
+
+            //    public string GetDisplayText()
+            //    {
+            //        string text = "Book: " + Title + " by " + Author;
+
+            //        if (OnLoan)
+            //        {
+            //            text += " (Currently on loan to " + Loanee + ")";
+            //            return text;
+
+            //        }
+            //        else
+            //        {
+            //            return text;
+            //        }
+            //    }
+
         }
-
-        public void Loan(string loanee)
-        {
-            Loanee = loanee;
-            OnLoan = true;
-        }
-
-        public void Return()
-        {
-            Loanee = null;
-            OnLoan = false;
-        }
-
-        public string GetDisplayText()
-        {
-            string text = "Book: " + Title + " by " + Author;
-
-            if (OnLoan)
-            {
-                text += " (Currently on loan to " + Loanee + ")";
-                return text;
-
-            }
-            else
-            {
-                return text;
-            }
-        }
-
-    }
     
 }
