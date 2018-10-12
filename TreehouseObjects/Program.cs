@@ -25,12 +25,21 @@ namespace TreehouseObjects
                         }
                 );
                 //if selecting a value outside of the array length (8), the compiler will return null
-                MapLocation location = path.GetLocationAt(7);
-                if (location != null)
-                {
-                Console.WriteLine($"{location.X}, {location.Y}");
-                }
-                
+                //MapLocation location = path.GetLocationAt(7);
+                //if (location != null)
+                //{
+                //Console.WriteLine($"{location.X}, {location.Y}");
+                //}
+
+                //changed the set property in Invader to private, so the following code is no longer usable
+
+                //Invader invader = new Invader();
+                //MapLocation location = new MapLocation(0, 0, map);
+                ////the following line of code calls the setter property in Invader.cs
+                //invader.Location = location;
+
+                //the following line of code calls the getter property in Invader.cs
+                //location = invader.Location;
             }
             catch (OutOfBoundsException ex)
             {
