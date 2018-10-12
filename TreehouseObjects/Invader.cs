@@ -10,14 +10,19 @@ namespace TreehouseObjects
         private readonly Path _path;
 
         //refactoring the getter into a COMPUTED property to solve for repetition of code in the Invader method and constructor. The property will now update the location for us. 
-        public MapLocation Location
-        {
-            get
-            {
-                return _path.GetLocationAt(_pathStep);
-            }
+        public MapLocation Location => _path.GetLocationAt(_pathStep);
 
-        }
+        //setter portion of the property is private with Health being set at 2. other classes should use the DecreaseHealth method below
+        public int Health { get; private set; } = 2;
+
+        //need to add a Length property in the Path class
+        public bool HasScored { get { return _pathStep >= _path.Length; } }
+
+        //property returns true if the invaders health drops to zero
+        public bool IsNeutralized => Health <= 0;
+
+        //property returns true if the invader has not been neutralized or has scored
+        public bool IsActive => !(IsNeutralized || HasScored);
 
         //using _pathStep field, initialized at 0, to keep track of where the invader is along the path
         private int _pathStep = 0;
@@ -29,10 +34,14 @@ namespace TreehouseObjects
         }
 
         //method to advance invader down the path. public because it needs to be accessable by other classes.
-        public void Move()
+        public void Move() => _pathStep += 1;
+
+        //method to decrease invader health when necessary. public because it needs to be accessable by other classes.
+        public void DecreaseHealth(int factor)
         {
-            _pathStep += 1;
+            Health -= factor;
         }
+
 
     }
 }
