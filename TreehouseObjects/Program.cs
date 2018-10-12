@@ -30,7 +30,7 @@ namespace TreehouseObjects
                 {
                 Console.WriteLine($"{location.X}, {location.Y}");
                 }
-
+                
             }
             catch (OutOfBoundsException ex)
             {
