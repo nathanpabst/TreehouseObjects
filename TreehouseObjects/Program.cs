@@ -6,8 +6,7 @@ namespace TreehouseObjects
     {
         public static void Main(string[] args)
         {
-            //Tower tower = new Tower();
-            Map map = new Map(8, 5);
+            Map map = new Map(8,5);
             //handle exception here with try/catch since this is the first file run in the program
             try
             {
@@ -24,22 +23,30 @@ namespace TreehouseObjects
                         new MapLocation(7,2, map),
                         }
                 );
-                //if selecting a value outside of the array length (8), the compiler will return null
-                //MapLocation location = path.GetLocationAt(7);
-                //if (location != null)
-                //{
-                //Console.WriteLine($"{location.X}, {location.Y}");
-                //}
 
-                //changed the set property in Invader to private, so the following code is no longer usable
+                Invader[] invaders =
+                {
+                    new Invader(path),
+                    new Invader(path),
+                    new Invader(path),
+                    new Invader(path)
+                };
 
-                //Invader invader = new Invader();
-                //MapLocation location = new MapLocation(0, 0, map);
-                ////the following line of code calls the setter property in Invader.cs
-                //invader.Location = location;
+                Tower[] towers =
+                {
+                    new Tower(new MapLocation(1,3,map)),
+                    new Tower(new MapLocation(3,3,map)),
+                    new Tower(new MapLocation(3,5,map)),
+                };
 
-                //the following line of code calls the getter property in Invader.cs
-                //location = invader.Location;
+                Level level = new Level(invaders)
+                {
+                    Towers = towers
+                };
+
+                bool playerWon = level.Play();
+
+                Console.WriteLine($"{playerWon} ? won : lost");
             }
             catch (OutOfBoundsException ex)
             {
@@ -57,60 +64,7 @@ namespace TreehouseObjects
 
             Console.Read();
         }
-        //        //------------ADDITIONAL PRACTICE WITH METHODS--------------
-        //        var book1 = new Book("The Fountainhead", "Ayn Rand");
-        //        Console.WriteLine(book1.GetDisplayText());
 
-        //        book1.Loan("Natz");
-        //        Console.WriteLine(book1.GetDisplayText());
-
-        //        book1.Return();
-        //        Console.WriteLine(book1.GetDisplayText());
-
-        //        Console.Read();
-        //    }
-
-        //}
-        //class Book
-        //{
-        //    public readonly string Title;
-        //    public readonly string Author;
-        //    public string Loanee = null;
-        //    public bool OnLoan = false;
-
-        //    public Book(string title, string author)
-        //    {
-        //        Title = title;
-        //        Author = author;
-        //    }
-
-        //    public void Loan(string loanee)
-        //    {
-        //        Loanee = loanee;
-        //        OnLoan = true;
-        //    }
-
-        //    public void Return()
-        //    {
-        //        Loanee = null;
-        //        OnLoan = false;
-        //    }
-
-        //    public string GetDisplayText()
-        //    {
-        //        string text = "Book: " + Title + " by " + Author;
-
-        //        if (OnLoan)
-        //        {
-        //            text += " (Currently on loan to " + Loanee + ")";
-        //            return text;
-
-        //        }
-        //        else
-        //        {
-        //            return text;
-        //        }
-        //    }
 
     }
 
