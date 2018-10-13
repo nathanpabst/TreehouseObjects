@@ -16,5 +16,11 @@ namespace TreehouseObjects
                 throw new OutOfBoundsException($"{x}, {y} is outside the boundaries of the map");
             }
         }
+
+        //use distanceTo method to determine distance between the map location and range that is passed in
+        public bool InRangeOf(MapLocation location, int range)
+        {
+            return DistanceTo(location) <= range;
+        }
     }
 }
