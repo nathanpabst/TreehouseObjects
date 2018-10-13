@@ -8,7 +8,7 @@ namespace TreehouseObjects
     {
         private readonly Invader[] _invaders;
 
-        private Tower[] Towers { get; set; }
+        public Tower[] Towers { get; set; }
 
         public Level(Invader[] invaders)
         {
