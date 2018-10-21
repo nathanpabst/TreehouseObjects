@@ -37,7 +37,6 @@ namespace TreehouseObjects
                     if (IsSuccessfulShot())
                     {
                     invader.DecreaseHealth(_power);
-                    Console.WriteLine("Shot and hit an invader!");
                         if (invader.IsNeutralized)
                         {
                             Console.WriteLine("he dead.");
