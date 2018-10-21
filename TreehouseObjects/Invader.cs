@@ -11,6 +11,9 @@ namespace TreehouseObjects
         //using _pathStep field, initialized at 0, to keep track of where the invader is along the path
         private int _pathStep = 0;
 
+        //readonly property initialized to 1
+        protected virtual int StepSize { get; } = 1;
+
         //refactoring the getter into a COMPUTED property to solve for repetition of code in the Invader method and constructor. The property will now update the location for us. 
         public MapLocation Location => _path.GetLocationAt(_pathStep);
 
@@ -33,7 +36,7 @@ namespace TreehouseObjects
         }
 
         //method to advance invader down the path. public because it needs to be accessable by other classes.
-        public void Move() => _pathStep += 1;
+        public virtual void Move() => _pathStep += StepSize;
 
         //method to decrease invader health when necessary. public because it needs to be accessable by other classes.
         public virtual void DecreaseHealth(int factor)
