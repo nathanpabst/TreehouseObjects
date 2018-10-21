@@ -26,7 +26,7 @@ namespace TreehouseObjects
 
                 Invader[] invaders =
                 {
-                    new Invader(path),
+                    new ShieldedInvader(path),
                     new Invader(path),
                     new Invader(path),
                     new Invader(path)
@@ -36,7 +36,7 @@ namespace TreehouseObjects
                 {
                     new Tower(new MapLocation(1,3,map)),
                     new Tower(new MapLocation(3,3,map)),
-                    new Tower(new MapLocation(3,5,map)),
+                    new Tower(new MapLocation(3,4,map))
                 };
 
                 Level level = new Level(invaders)

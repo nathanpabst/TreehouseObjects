@@ -17,7 +17,7 @@ namespace TreehouseObjects
         }
         
 
-        //method
+        //method to determine a point is on the map
         public bool OnMap(Point point)
         {
             return point.X >= 0 && point.X < Width && 

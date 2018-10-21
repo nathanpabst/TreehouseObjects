@@ -8,6 +8,8 @@ namespace TreehouseObjects
     {
         //field to store an instance of the Path object allowing us to update the location and access the info later. call _path in the Invader constructor
         private readonly Path _path;
+        //using _pathStep field, initialized at 0, to keep track of where the invader is along the path
+        private int _pathStep = 0;
 
         //refactoring the getter into a COMPUTED property to solve for repetition of code in the Invader method and constructor. The property will now update the location for us. 
         public MapLocation Location => _path.GetLocationAt(_pathStep);
@@ -24,9 +26,6 @@ namespace TreehouseObjects
         //property returns true if the invader has not been neutralized or has scored
         public bool IsActive => !(IsNeutralized || HasScored);
 
-        //using _pathStep field, initialized at 0, to keep track of where the invader is along the path
-        private int _pathStep = 0;
-
         //constructor method to set the location on the path
         public Invader(Path path)
         {
@@ -37,11 +36,12 @@ namespace TreehouseObjects
         public void Move() => _pathStep += 1;
 
         //method to decrease invader health when necessary. public because it needs to be accessable by other classes.
-        public void DecreaseHealth(int factor)
+        public virtual void DecreaseHealth(int factor)
         {
             Health -= factor;
-        }
+            Console.WriteLine("Shot and hit an invader!");
 
+        }
 
     }
 }
