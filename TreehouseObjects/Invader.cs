@@ -18,7 +18,7 @@ namespace TreehouseObjects
         public MapLocation Location => _path.GetLocationAt(_pathStep);
 
         //setter portion of the property is private with Health being set at 2. other classes should use the DecreaseHealth method below
-        public int Health { get; private set; } = 2;
+        public virtual int Health { get; private set; } = 2;
 
         //need to add a Length property in the Path class
         public bool HasScored { get { return _pathStep >= _path.Length; } }
