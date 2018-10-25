@@ -39,7 +39,7 @@ namespace TreehouseObjects
                     invader.DecreaseHealth(Power);
                         if (invader.IsNeutralized)
                         {
-                            Console.WriteLine("he dead.");
+                            Console.WriteLine("Neutralized invader at " + invader.Location +".");
                         }
                     }
                     else

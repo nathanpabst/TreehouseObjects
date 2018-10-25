@@ -16,6 +16,11 @@ namespace TreehouseObjects
             Y = y;
         }
 
+        public override string ToString()
+        {
+            return X + "," + Y;
+        }
+
         public int DistanceTo(int x, int y)
         {
             //refactored following code into the return statement below
