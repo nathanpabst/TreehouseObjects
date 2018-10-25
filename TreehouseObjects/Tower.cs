@@ -7,9 +7,9 @@ namespace TreehouseObjects
     class Tower
     {
         //use the following const variables to make code more readable
-        private const int _range = 1;
-        private const int _power = 1;
-        private const double _accuracy = .75;
+        protected virtual int Range { get; } = 1;
+        protected virtual int Power { get; } = 1;
+        protected virtual double Accuracy { get; } = .75;
 
         private static readonly Random _random = new Random();
 
@@ -24,7 +24,7 @@ namespace TreehouseObjects
 
         public bool IsSuccessfulShot()
         {
-            return _random.NextDouble() < _accuracy;
+            return _random.NextDouble() < Accuracy;
         }
 
         //Loop through each index in the array, increment by one, and store in variable
@@ -32,11 +32,11 @@ namespace TreehouseObjects
         {
             foreach (Invader invader in invaders)
             {
-                if (invader.IsActive && _location.InRangeOf(invader.Location, _range))
+                if (invader.IsActive && _location.InRangeOf(invader.Location, Range))
                 {
                     if (IsSuccessfulShot())
                     {
-                    invader.DecreaseHealth(_power);
+                    invader.DecreaseHealth(Power);
                         if (invader.IsNeutralized)
                         {
                             Console.WriteLine("he dead.");
