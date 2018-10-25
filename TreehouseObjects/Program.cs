@@ -24,6 +24,14 @@ namespace TreehouseObjects
                         }
                 );
 
+                MapLocation location = new MapLocation(0, 2, map);
+
+                //if (path.IsOnPath(location))
+                //{
+                //    Console.WriteLine($"{location} +' is on the path'");
+                //    return;
+                //}
+
                 Invader[] invaders =
                 {
                     new ShieldedInvader(path),
@@ -34,9 +42,10 @@ namespace TreehouseObjects
 
                 Tower[] towers =
                 {
-                    new SniperTower(new MapLocation(1,3,map)),
-                    new PowerfulTower(new MapLocation(3,3,map)),
-                    new LongRangeTower(new MapLocation(3,4,map))
+                    new Tower(new MapLocation(1,3,map)),
+                    new SniperTower(new MapLocation(3,3,map)),
+                    new PowerfulTower(new MapLocation(5,3,map)),
+                    new LongRangeTower(new MapLocation(7,3,map))
                 };
 
                 Level level = new Level(invaders)
@@ -46,7 +55,7 @@ namespace TreehouseObjects
 
                 bool playerWon = level.Play();
 
-                Console.WriteLine($"{playerWon} ? won : lost");
+                Console.WriteLine("Player " +(playerWon ? "won" : "lost"));
             }
             catch (OutOfBoundsException ex)
             {
