@@ -21,7 +21,7 @@ namespace TreehouseObjects
             return X + "," + Y;
         }
 
-        //determine if the objects are equal  
+        //EQUALS method determines if two objects are practically equal. IS will also check to make sure obj is not null  
         public override bool Equals(object obj)
         {
             if (!(obj is Point))
