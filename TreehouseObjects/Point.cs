@@ -32,6 +32,12 @@ namespace TreehouseObjects
             return this.X == that.X && this.Y == that.Y;
         }
 
+        //GETHASHCODE method assigns a unique ID to an object. typically used in conjuction with the EQUALS method
+        public override int GetHashCode()
+        {
+            return X.GetHashCode() * 31 + Y.GetHashCode();
+        }
+
         public int DistanceTo(int x, int y)
         {
             //refactored following code into the return statement below
