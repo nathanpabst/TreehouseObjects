@@ -21,7 +21,7 @@ namespace TreehouseObjects
             return X + "," + Y;
         }
 
-        //determine if the objects are equal  
+        //EQUALS method determines if two objects are practically equal. IS will also check to make sure obj is not null  
         public override bool Equals(object obj)
         {
             if (!(obj is Point))
@@ -30,6 +30,12 @@ namespace TreehouseObjects
             }
             Point that = obj as Point;
             return this.X == that.X && this.Y == that.Y;
+        }
+
+        //GETHASHCODE method assigns a unique ID to an object. typically used in conjuction with the EQUALS method
+        public override int GetHashCode()
+        {
+            return X.GetHashCode() * 31 + Y.GetHashCode();
         }
 
         public int DistanceTo(int x, int y)

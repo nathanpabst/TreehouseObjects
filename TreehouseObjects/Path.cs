@@ -24,13 +24,13 @@ namespace TreehouseObjects
         {
             foreach (var pathLocation in _path)
             {
-                //returns true if the objects contain the same value.
+                //returns true if the objects contain the same value. overriding EQUALS in the Point class because we don't want to check that if the objects are the exact same...just that they refer to the same coordinates on the map.
                 if (location.Equals(pathLocation))
                 {
-                return true;
+                    return true;
                 }
             }
-        return false;
+            return false;
         }
 
     }
