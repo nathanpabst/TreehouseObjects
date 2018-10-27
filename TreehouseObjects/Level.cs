@@ -6,11 +6,11 @@ namespace TreehouseObjects
 {
     class Level
     {
-        private readonly InvaderBase[] _invaders;
+        private readonly IInvader[] _invaders;
 
         public Tower[] Towers { get; set; }
 
-        public Level(InvaderBase[] invaders)
+        public Level(IInvader[] invaders)
         {
             _invaders = invaders;
         }
@@ -30,7 +30,7 @@ namespace TreehouseObjects
 
                 //count and move the invaders that are still active.
                 remainingInvaders = 0;
-                foreach (InvaderBase invader in _invaders)
+                foreach (IInvader invader in _invaders)
                 {
                     if (invader.IsActive)
                     {
