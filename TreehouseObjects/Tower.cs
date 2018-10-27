@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TreehouseObjects
 {
-    class Tower
+    class Tower 
     {
         //use the following const variables to make code more readable
         protected virtual int Range { get; } = 1;
@@ -28,9 +28,9 @@ namespace TreehouseObjects
         }
 
         //Loop through each index in the array, increment by one, and store in variable
-        public void FireOnInvaders(InvaderBase[] invaders)
+        public void FireOnInvaders(IInvader[] invaders)
         {
-            foreach (InvaderBase invader in invaders)
+            foreach (IInvader invader in invaders)
             {
                 if (invader.IsActive && _location.InRangeOf(invader.Location, Range))
                 {

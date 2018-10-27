@@ -32,7 +32,7 @@ namespace TreehouseObjects
                     return;
                 }
 
-                InvaderBase[] invaders =
+                IInvader[] invaders =
                 {
                     //these are sub-classes of the InvaderBase
                     new ShieldedInvader(path),
