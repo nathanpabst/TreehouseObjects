@@ -4,7 +4,8 @@ using System.Text;
 
 namespace TreehouseObjects
 {
-    class Invader
+    //adding the abstract keyword to the class definition states that it is no longer a concrete implementation of the class...it now only provides an abstract definition of what it means to be of a certain class. See BasicInvader file.
+    abstract class InvaderBase
     {
         //field to store an instance of the Path object allowing us to update the location and access the info later. call _path in the Invader constructor
         private readonly Path _path;
@@ -18,7 +19,8 @@ namespace TreehouseObjects
         public MapLocation Location => _path.GetLocationAt(_pathStep);
 
         //setter portion of the property is private with Health being set at 2. other classes should use the DecreaseHealth method below
-        public virtual int Health { get; protected set; } = 2;
+        //adding abstract here ensures that the Health property must be overridden in each sub-class
+        public abstract int Health { get; protected set; }
 
         //need to add a Length property in the Path class
         public bool HasScored { get { return _pathStep >= _path.Length; } }
@@ -30,7 +32,7 @@ namespace TreehouseObjects
         public bool IsActive => !(IsNeutralized || HasScored);
 
         //constructor method to set the location on the path
-        public Invader(Path path)
+        public InvaderBase(Path path)
         {
             _path = path;
         }

@@ -32,12 +32,13 @@ namespace TreehouseObjects
                     return;
                 }
 
-                Invader[] invaders =
+                InvaderBase[] invaders =
                 {
+                    //these are sub-classes of the InvaderBase
                     new ShieldedInvader(path),
                     new FastInvader(path),
                     new StrongInvader(path),
-                    new Invader(path)
+                    new BasicInvader(path)
                 };
 
                 Tower[] towers =

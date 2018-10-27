@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TreehouseObjects
 {
-    class StrongInvader : Invader
+    class StrongInvader : InvaderBase
     {
         public override int Health { get; protected set; } = 2;
 
