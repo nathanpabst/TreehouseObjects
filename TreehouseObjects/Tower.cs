@@ -28,9 +28,9 @@ namespace TreehouseObjects
         }
 
         //Loop through each index in the array, increment by one, and store in variable
-        public void FireOnInvaders(Invader[] invaders)
+        public void FireOnInvaders(InvaderBase[] invaders)
         {
-            foreach (Invader invader in invaders)
+            foreach (InvaderBase invader in invaders)
             {
                 if (invader.IsActive && _location.InRangeOf(invader.Location, Range))
                 {
