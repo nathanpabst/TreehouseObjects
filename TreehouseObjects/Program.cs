@@ -24,21 +24,14 @@ namespace TreehouseObjects
                         }
                 );
 
-                MapLocation location = new MapLocation(0, 2, map);
-
-                if (path.IsOnPath(location))
-                {
-                    Console.WriteLine($"{location} +' is on the path'");
-                    return;
-                }
-
                 IInvader[] invaders =
                 {
                     //these are sub-classes of the InvaderBase
                     new ShieldedInvader(path),
                     new FastInvader(path),
                     new StrongInvader(path),
-                    new BasicInvader(path)
+                    new BasicInvader(path),
+                    new ResurrectingInvader(path)
                 };
 
                 Tower[] towers =
