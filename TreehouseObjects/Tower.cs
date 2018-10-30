@@ -11,7 +11,6 @@ namespace TreehouseObjects
         protected virtual int Power { get; } = 1;
         protected virtual double Accuracy { get; } = .75;
 
-        private static readonly Random _random = new Random();
 
         //field to determine tower location on the map
         private readonly MapLocation _location;
@@ -24,7 +23,7 @@ namespace TreehouseObjects
 
         public bool IsSuccessfulShot()
         {
-            return _random.NextDouble() < Accuracy;
+            return Random.NextDouble() < Accuracy;
         }
 
         //Loop through each index in the array, increment by one, and store in variable
