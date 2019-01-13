@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TreehouseObjects
 {
-    class Tower 
+    public class Tower 
     {
         //use the following const variables to make code more readable
         protected virtual int Range { get; } = 1;
