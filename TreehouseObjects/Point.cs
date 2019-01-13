@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TreehouseObjects
 {
-    class Point
+    public class Point
     {
         public readonly int X;
         public readonly int Y;
