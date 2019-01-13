@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace TreehouseObjects
 {
@@ -20,18 +21,18 @@ namespace TreehouseObjects
             return (pathStep < _path.Length) ? _path[pathStep] : null;
         }
 
-        public bool IsOnPath(MapLocation location)
-        {
-            foreach (var pathLocation in _path)
-            {
-                //returns true if the objects contain the same value. overriding EQUALS in the Point class because we don't want to check that if the objects are the exact same...just that they refer to the same coordinates on the map.
-                if (location.Equals(pathLocation))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
+        public bool IsOnPath(MapLocation mapLocation) => _path.Contains(mapLocation);
+        //{
+        //    foreach (var pathLocation in _path)
+        //    {
+        //        //returns true if the objects contain the same value. overriding EQUALS in the Point class because we don't want to check that if the objects are the exact same...just that they refer to the same coordinates on the map.
+        //        if (location.Equals(pathLocation))
+        //        {
+        //            return true;
+        //        }
+        //    }
+        //    return false;
+        //}
 
     }
 }
