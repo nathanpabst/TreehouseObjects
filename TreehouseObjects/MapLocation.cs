@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TreehouseObjects
 {
-    class MapLocation : Point
+    public class MapLocation : Point
     {
         //constructor
         public MapLocation(int x, int y, Map map) : base(x, y)

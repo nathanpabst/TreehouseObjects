@@ -1,7 +1,5 @@
-using System;
-using Xunit;
-using System.Threading.Tasks;
 using TreehouseObjects;
+using Xunit;
 
 namespace XUnitTestTreehouseObjects.Tests
 {
@@ -19,9 +17,25 @@ namespace XUnitTestTreehouseObjects.Tests
         }
 
         [Fact]
-        public void DistanceToTest()
+        public void DistanceToWithPathagoreanTriple()
         {
-            Assert.True(false, "This test needs an implementation");
+            Point point = new Point(3, 4);
+            var target = new Point(0, 0);
+
+            var expected = 5.0;
+            var actual = target.DistanceTo(point);
+            Assert.Equal(expected, actual, 2);
+        }
+
+        [Fact]
+        public void DistanceToPointAtSamePosition()
+        {
+            var point = new Point(3, 4);
+            var target = new Point(3, 4);
+
+            var expected = 0.0;
+            var actual = target.DistanceTo(point);
+            Assert.Equal(expected, actual, 2);
         }
     }
 }
