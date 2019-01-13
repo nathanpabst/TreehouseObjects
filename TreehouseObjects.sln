@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2019
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreehouseObjects", "TreehouseObjects\TreehouseObjects.csproj", "{DE598A05-B0F1-4EE2-B374-7C437EBE1890}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreehouseObjects", "TreehouseObjects\TreehouseObjects.csproj", "{DE598A05-B0F1-4EE2-B374-7C437EBE1890}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitTestTreehouseObjects.Tests", "XUnitTestTreehouseObjects\XUnitTestTreehouseObjects.Tests.csproj", "{7DD05F61-144C-4FDB-8A17-56AF5BDF364D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{DE598A05-B0F1-4EE2-B374-7C437EBE1890}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE598A05-B0F1-4EE2-B374-7C437EBE1890}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE598A05-B0F1-4EE2-B374-7C437EBE1890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DD05F61-144C-4FDB-8A17-56AF5BDF364D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DD05F61-144C-4FDB-8A17-56AF5BDF364D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DD05F61-144C-4FDB-8A17-56AF5BDF364D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DD05F61-144C-4FDB-8A17-56AF5BDF364D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
