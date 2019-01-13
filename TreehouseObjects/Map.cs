@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TreehouseObjects
 {
-    class Map
+    public class Map
     {
         public readonly int Width;
         public readonly int Height;

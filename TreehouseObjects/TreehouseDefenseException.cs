@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TreehouseObjects
 {
-    class TreehouseDefenseException : Exception
+    public class TreehouseDefenseException : Exception
     {
         public TreehouseDefenseException()
         {
@@ -17,7 +17,7 @@ namespace TreehouseObjects
         }
     }
 
-    class OutOfBoundsException : TreehouseDefenseException
+    public class OutOfBoundsException : TreehouseDefenseException
     {
         public OutOfBoundsException()
         {

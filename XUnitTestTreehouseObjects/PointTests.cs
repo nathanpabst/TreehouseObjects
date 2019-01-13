@@ -19,7 +19,7 @@ namespace XUnitTestTreehouseObjects.Tests
         [Fact]
         public void DistanceToWithPathagoreanTriple()
         {
-            var point = new Point(3, 4);
+            Point point = new Point(3, 4);
             var target = new Point(0, 0);
 
             var expected = 5.0;
